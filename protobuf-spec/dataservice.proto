@@ -1,0 +1,25 @@
+syntax="proto3";
+
+package blog.data;
+option go_package = "dataservicepb";
+
+import "dataservice-users.proto";
+import "dataservice-roles.proto";
+
+service DatabaseService{
+    // User operations
+    rpc InsertUser(InsertUserRequest) returns(InsertUserResponse) {};
+    rpc GetUsers(GetUsersRequest) returns(GetUsersResponse) {};
+    rpc GetUserByID(GetUserByIDRequest) returns(GetUserByIDResponse) {};
+    rpc UpdateUserByID(UpdateUserByIDRequest) returns(UpdateUserByIDResponse) {};
+    rpc DeleteUserByID(DeleteUserByIDRequest) returns(DeleteUserByIDResponse) {};
+
+    //Role operations
+    rpc InsertRole(InsertRoleRequest) returns(InsertRoleResponse) {};
+    rpc GetRoles(GetRolesRequest) returns(GetRolesResponse) {};
+    rpc GetRoleByID(GetRoleByIDRequest) returns(GetRoleByIDResponse) {};
+    rpc UpdateRoleByID(UpdateRoleByIDRequest) returns(UpdateRoleByIDResponse) {};
+    rpc DeleteRoleByID(DeleteRoleByIDRequest) returns(DeleteRoleByIDResponse) {};
+
+    //User role operations
+}

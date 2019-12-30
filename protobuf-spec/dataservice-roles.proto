@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+option go_package = "dataservicepb";
+
+message Role {
+    int32 id = 1;
+    string key = 2;
+    string long_name = 3;
+    string description = 4;
+    int32 create_user_id = 5;
+    int32 update_user_id = 6;
+    int32 delete_user_id = 7;
+}
+
+message InsertRoleRequest {
+    Role role = 1;
+}
+
+message InsertRoleResponse {
+    int32 rows_affected = 1;
+}
+
+message GetRolesRequest {
+
+}
+
+message GetRolesResponse {
+    repeated Role roles = 2;
+}
+
+message GetRoleByIDRequest {
+    int32 role_id = 1;
+}
+
+message GetRoleByIDResponse {
+    Role role = 2;
+}
+
+message UpdateRoleByIDRequest {
+    int32 role_id = 1;
+}
+
+message UpdateRoleByIDResponse {
+    int32 rows_affected = 1;
+}
+
+message DeleteRoleByIDRequest {
+    int32 role_id = 1;
+}
+
+message DeleteRoleByIDResponse {
+    int32 rows_affected = 1;
+}
